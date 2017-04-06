@@ -1,4 +1,5 @@
 function x = Gauss_Seidel(A, b, prev, eps)
+tic;
 n = size(A,1);
 x = zeros(n, 1);
 nm = eps;
@@ -19,6 +20,9 @@ while nm >= eps
     nm = max(abs(x - prev));
     prev = x;
 end
-disp('Steps:');
+disp('passos Gauss-Seidel:');
 disp(steps);
+t = toc;
+disp('tempo Gauss-Seidel:');
+disp(t);
 end

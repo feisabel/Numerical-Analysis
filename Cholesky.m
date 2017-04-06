@@ -1,4 +1,5 @@
 function x = Cholesky(A, b)
+tic;
 n = size(A,1);
 %disp([A,b]);
 IL = eye(n);
@@ -14,5 +15,9 @@ for i = 1:n-1
     %disp([A,b]);
 end
 ID = diag(diag(A).^(-1));
-x = IL.' * ID * b;
+x = ID * b;
+x = IL.' * x;
+t = toc;
+disp('tempo Cholesky:');
+disp(t);
 end
