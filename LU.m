@@ -2,7 +2,7 @@ function x = LU(A, b)
 tic;
 n = size(A,1);
 x = zeros(n, 1);
-%disp([A,b]);
+disp([A,b]);
 IL = eye(n);
 for i = 1:n-1
     [dummy, r] = max(abs(A(i:n,i)));
@@ -14,9 +14,9 @@ for i = 1:n-1
         aux = b(r);
         b(r) = b(i);
         b(i) = aux;
-        %disp('--------------------------------');
-        %disp('Troca de pivô');
-        %disp([A,b]);
+        disp('--------------------------------');
+        disp('Troca de pivô');
+        disp([A,b]);
     end
     G = eye(n);
     for j = i+1:n
@@ -25,8 +25,8 @@ for i = 1:n-1
     IL = G * IL;
     A = G * A;
     b = G * b;
-    %disp('--------------------------------');
-    %disp([A,b]);
+    disp('--------------------------------');
+    disp([A,b]);
 end
 
 for i = n:-1:1
@@ -37,6 +37,6 @@ for i = n:-1:1
     x(i) = x(i) / A(i,i);
 end
 t = toc;
-disp('tempo LU:');
-disp(t);
+%disp('tempo LU:');
+%disp(t);
 end

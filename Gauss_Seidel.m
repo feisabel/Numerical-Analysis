@@ -4,6 +4,7 @@ n = size(A,1);
 x = zeros(n, 1);
 nm = eps;
 steps = 0;
+disp(prev);
 while nm >= eps
     steps = steps + 1;
     for i = 1:n
@@ -19,10 +20,12 @@ while nm >= eps
     end
     nm = max(abs(x - prev));
     prev = x;
+    disp('--------------------------------');
+    disp(prev);
 end
-disp('passos Gauss-Seidel:');
-disp(steps);
+%disp('passos Gauss-Seidel:');
+%disp(steps);
 t = toc;
-disp('tempo Gauss-Seidel:');
-disp(t);
+%disp('tempo Gauss-Seidel:');
+%disp(t);
 end
