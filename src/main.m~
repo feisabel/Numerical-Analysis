@@ -24,7 +24,6 @@ disp(x);
 A = (A + A')/2;
 A = A + maxVal*n*eye(n);
 b = sum(A, 2);
-%}
 
 if issymmetric(A) && all(eig(A) > 0)
     disp('Cholesky:');
@@ -39,27 +38,12 @@ nm = norm(ID * (A-D),Inf);
 
 if nm < 1
     disp('Jacobi:');
-    x = Jacobi(A, b, zeros(n,1), 0.0001);
+    x = Jacobi(A, b, zeros(n,1), 0.1);
     disp('x =');
     disp(x);
-    %{
-    disp('Jacobi 2:');
-    x = Jacobi(A, b, zeros(n,1) + 10, 0.0001);
-    disp('x =');
-    disp(x);
-    %}
     disp('Gauss-Seidel:');
-    x = Gauss_Seidel(A, b, zeros(n,1), 0.0001);
+    x = Gauss_Seidel(A, b, zeros(n,1), 0.1);
     disp('x =');
     disp(x);
-    %{
-    disp('Gauss-Seidel 2:');
-    x = Gauss_Seidel(A, b, zeros(n,1)+10, 0.0001);
-    disp('x =');
-    disp(x);
-    %}
-else
-    disp('Não é possível executar Jacobi e Gauss-Seidel pois a norma de ||D^(-1) (A-D)|| é maior ou igual a 1:');
-    disp(nm);
 end
 end

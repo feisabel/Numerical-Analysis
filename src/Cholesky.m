@@ -18,6 +18,6 @@ ID = diag(diag(A).^(-1));
 x = ID * b;
 x = IL.' * x;
 t = toc;
-%disp('tempo Cholesky:');
-%disp(t);
+disp('tempo Cholesky:');
+disp(t);
 end

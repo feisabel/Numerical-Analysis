@@ -37,6 +37,6 @@ for i = n:-1:1
     x(i) = x(i) / A(i,i);
 end
 t = toc;
-%disp('tempo LU:');
-%disp(t);
+disp('tempo LU:');
+disp(t);
 end

@@ -23,9 +23,9 @@ while nm >= eps
     disp('--------------------------------');
     disp(prev);
 end
-%disp('passos Gauss-Seidel:');
-%disp(steps);
+disp('passos Gauss-Seidel:');
+disp(steps);
 t = toc;
-%disp('tempo Gauss-Seidel:');
-%disp(t);
+disp('tempo Gauss-Seidel:');
+disp(t);
 end

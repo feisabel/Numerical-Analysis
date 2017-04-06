@@ -22,9 +22,9 @@ while nm >= eps
     disp('--------------------------------');
     disp(prev);
 end
-%disp('passos Jacobi:');
-%disp(steps);
+disp('passos Jacobi:');
+disp(steps);
 t = toc;
-%disp('tempo Jacobi:');
-%disp(t);
+disp('tempo Jacobi:');
+disp(t);
 end
